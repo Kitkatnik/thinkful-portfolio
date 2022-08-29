@@ -19,18 +19,21 @@
 		<div class="name">
 			<h1><span class="firstname">KATYA</span><br/><span class="lastname">SARMIENTO</span></h1>
 		</div>
-		<h2>Full-Stack Developer</h2>
-		<nav>
-			<ul>
-				<li><a href="#intro">Intro</a></li>
-				<li>
-					<a href="#about">About Me</a>
-					<ul>
-						<li><a href="#professional">Professional</a></li>
-						<li><a href="#personal">Personal</a></li>
-					</ul>
-				</li>
-				<li><a href="#contact">Contact</a></li>
+		<nav class="nav-bar">
+			<ul class="nav-links">
+				<input type="checkbox" id="nav-responsive-toggle" />
+				<label for="nav-responsive-toggle" class="nav-hamburger">&#9776;</label>
+				<div class="nav-menu">
+					<li><a href="#intro">Intro</a></li>
+					<li class="nav-about">
+						<a href="#about">About</a>
+						<ul class="nav-dropdown">
+							<li><a href="#professional">Professional</a></li>
+							<li><a href="#personal">Personal</a></li>
+						</ul>
+					</li>
+					<li><a href="#contact">Contact</a></li>
+				</div>
 			</ul>
 		</nav>
 	</header>
@@ -41,6 +44,7 @@
 					<h2>Intro</h2>
 					<img src="/image/KatyaHeadshot.jpg"
 						alt="Photo of a girl with purple hair, wearing cat ears on her head. She's wearing a black long-sleeve shirt and has the top of her hands together touching the below her chin" />
+					<h3><span class="role1">Full-Stack Developer</span><span class="role2">Lifelong Learner</span></h3>
 					<ul>
 						<li><strong>Name Pronunciation:</strong> KAH-tyuh sarr-MYEN-toh</li>
 						<li><strong>Nickname:</strong> Kat</li>
