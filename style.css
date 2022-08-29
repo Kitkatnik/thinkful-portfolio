@@ -151,6 +151,43 @@ svg {
 	border-right: 1px solid rgba(255,255,255,0.2);
 }
 
+.name {
+	display: block;
+	margin: auto;
+	width: fit-content;
+}
+
+h1 {
+	text-align: right;
+	line-height: 1;
+}
+
+.firstname {
+	position: relative;
+	padding: 0;
+	font-family: 'Manrope', sans-serif;
+	font-weight: 800;
+	letter-spacing: 5px;
+	font-size: 3em;
+}
+
+.firstname::before {
+	background-color: #FFBC42;
+	content: "";
+	position: absolute;
+	width: calc(100% + 5px);
+	height: 50%;
+	left: -5px;
+	bottom: 10px;
+	z-index: -1;
+	transform: rotate(-2deg);
+}
+
+.lastname {
+	font-family: 'Alumni Sans Pinstripe', sans-serif;
+	font-size: 30px;
+}
+
 /* LINKS */
 a:link {}
 a:hover {}
