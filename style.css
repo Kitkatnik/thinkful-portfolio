@@ -339,6 +339,62 @@ nav li {
 
 h2 {
 	font-family: 'Manrope', sans-serif;
+	text-align: center;
+	line-height: 1;
+	text-transform: uppercase;
+	font-size: 2em;
+	color: #4B54F7;
+	letter-spacing: 5px;
+}
+
+.highlight {
+	position: relative;
+	padding: 0;
+}
+
+.highlight::before {
+	background-color: #fff;
+	content: "";
+	position: absolute;
+	width: calc(100% + 10px);
+	height: 100%;
+	left: -10px;
+	bottom: 0;
+	z-index: -1;
+	transform: rotate(-2deg);
+	transition: 0.5s;
+}
+
+.highlight:hover::before {
+height: 60%;
+}
+
+p {
+	font-family: 'Quicksand', sans-serif;
+}
+main li {
+	font-family: 'Quicksand', sans-serif;
+	font-size: 1.1em;
+}
+
+/* IMAGE*/
+
+img {
+	width: 100%;
+	border-radius: 100%;
+}
+
+.img {
+	flex: 1;
+}
+
+.intro {
+	flex: 2;
+	padding-left: 1%;
+}
+
+.profile {
+	display: flex;
 }
 
 /* RESPONSIVE */
