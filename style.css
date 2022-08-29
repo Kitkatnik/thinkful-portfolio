@@ -17,6 +17,7 @@ svg {
   position: absolute;
   left: 0;
   top: -100px;
+	overflow:hidden;
 }
 
 .st0{opacity:0.2;fill:#ffffff;}
@@ -121,13 +122,12 @@ svg {
 	display: block;
 	margin: auto;
 	margin-top: 2%;
-	padding: 1% 5%;
-	width:40%;
+	width:50%;
 	background-color: rgba(0, 0, 0, 0.20);
 	border-radius: 32px 32px 0px 0px;
 	backdrop-filter: blur(10px);
 	color: white;
-	z-index: 100;
+	z-index: 20;
 	position: relative;
 	border-top: 1px solid rgba(255,255,255,0.2);
 	border-left: 1px solid rgba(255,255,255,0.2);
@@ -145,16 +145,19 @@ svg {
 	box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),0 10px 10px -5px rgba(0, 0, 0, 0.04);
 	backdrop-filter: blur(10px);
 	position: relative;
-	z-index: 100;
+	z-index: 10;
 	border-bottom: 1px solid rgba(255,255,255,0.2);
 	border-left: 1px solid rgba(255,255,255,0.2);
 	border-right: 1px solid rgba(255,255,255,0.2);
 }
 
+/* NAME HEADER */
+
 .name {
 	display: block;
 	margin: auto;
 	width: fit-content;
+	padding: 2% 0%;
 }
 
 h1 {
@@ -185,12 +188,226 @@ h1 {
 
 .lastname {
 	font-family: 'Alumni Sans Pinstripe', sans-serif;
-	font-size: 30px;
+	font-size: 1em;
 }
 
+/* ROLE TITLE ANIMATION */
+
+h3 {
+	font-family: 'Manrope', sans-serif;
+	text-align: left;
+}
+
+.role1 {
+	animation: role1;
+}
+
+.role2 {
+	animation: role2;
+}
+
+.role1, .role2 {
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  position: relative;
+	animation-duration: 20s;
+  animation-timing-function: steps(25, end);
+  animation-iteration-count: infinite;
+}
+
+.role1::after, .role2::after {
+  content: "|";
+  position: absolute;
+  right: 0;
+	animation: caret infinite;
+  animation-duration: 1s;
+  animation-timing-function: steps(1, end);
+}
+
+@keyframes caret {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes role1 {
+  0%, 50%, 100% {
+    width: 0;
+  }
+  10%, 40% {
+    width: 10.5em;
+  }
+}
+
+@keyframes role2 {
+  0%, 50%, 100% {
+    width: 0;
+  }
+  
+  60%, 90% {
+    width: 8.3em;
+  }
+}
+
+
+
 /* LINKS */
-a:link {}
-a:hover {}
-a:active {}
-a:visited {}
+
+a {
+	text-decoration: none;
+}
+
+a:link {color: #fff;}
+a:hover {color: #4B54F7}
+a:active {color: #4B54F7}
+a:visited {color: #FFBC42}
+
+/* NAVIGATION */
+
+nav li {
+	list-style: none;
+}
+
+.nav-bar {
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	background-color:rgba(20,19,22,0.5);
+	color: #fff;
+	z-index: 200;
+}
+
+.nav-links {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-left:0px;
+}
+
+.nav-links a {
+	color:#fff;
+	font-family: 'Manrope', sans-serif;
+	text-transform: uppercase;
+}
+
+.nav-menu {
+	display: flex;
+	gap: 1em;
+	font-size: 18px;
+	font-family: 'Manrope', sans-serif;
+}
+
+.nav-menu li {
+	padding:20px;
+}
+
+.nav-menu li:hover {
+	background-color:#202C39;
+	transition: 0.3s ease;
+}
+
+.nav-about {
+	position:relative;
+}
+
+.nav-dropdown {
+	background-color:rgba(20,19,22,1);
+	padding: 0;
+	position: absolute;
+	display: none;
+	top: 60px;
+}
+
+.nav-dropdown li {
+	padding: 0.5em 1em;
+	width: 8em;
+	text-align: center;
+}
+
+.nav-dropdown li:hover {
+	background-color: #202C39;
+}
+
+.nav-about:hover .nav-dropdown {
+	display:block;
+}
+
+/* TEXT */
+
+h2 {
+	font-family: 'Manrope', sans-serif;
+}
+
+/* RESPONSIVE */
+
+input[type=checkbox]{
+	display:none;
+}
+
+.nav-hamburger {
+	display: none;
+	font-size: 25px;
+	user-select: none;
+	padding:10px;
+}
+
+@media (max-width: 1200px) {
+	.glass-dark {
+		width:50%;
+	}
+	.glass-light {
+		width: 40%;
+	}
+}
+
+@media (max-width: 1200px) {
+	.glass-dark {
+		width:60%;
+	}
+	.glass-light {
+		width: 50%;
+	}
+}
+
+@media (max-width: 768px) {
+	.glass-dark {
+		width:70%;
+	}
+	.glass-light {
+		width: 60%;
+	}
+	h1 {
+		font-size: 100%;
+	}
+	.nav-menu { 
+		display:none;
+		position: absolute;
+		background-color:rgba(20,19,22,1);
+		right: 0;
+		left: 0;
+		text-align: center;
+		padding: 0;
+	}
+	.nav-menu li:hover {
+		background-color:#202C39;
+		transition: 0.3s ease;
+	}
+	
+	input[type=checkbox]:checked ~ .nav-menu{
+		display: block;
+	}
+	.nav-hamburger {
+		display: block;
+	}
+	.nav-dropdown {
+		top: 60px;
+		transform: translateX(35%);
+	}
+	.nav-dropdown li:hover {
+		background-color: #202C39;
+	}
+}
 
