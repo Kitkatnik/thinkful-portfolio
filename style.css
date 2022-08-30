@@ -22,6 +22,7 @@ body {
     #4573e8,
     #4776e6
   );
+  overflow-x: hidden;
 }
 
 /* GEOMETRIC BACKGROUND OVERLAY */
