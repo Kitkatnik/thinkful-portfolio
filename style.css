@@ -562,68 +562,68 @@ h3 {
 }
 
 .pers-role1 {
-	animation: pers-role1;
+  animation: pers-role1;
+}
+
+.pers-role2 {
+  animation: pers-role2;
+}
+
+.pers-role1,
+.pers-role2 {
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  position: relative;
+  animation-duration: 20s;
+  animation-timing-function: steps(25, end);
+  animation-iteration-count: infinite;
+}
+
+.pers-role1::after,
+.pers-role2::after {
+  content: "|";
+  position: absolute;
+  right: 0;
+  animation: caret infinite;
+  animation-duration: 1s;
+  animation-timing-function: steps(1, end);
+}
+
+@keyframes pers-role1 {
+  0%,
+  50%,
+  100% {
+    width: 0;
   }
-  
-  .pers-role2 {
-	animation: pers-role2;
+  10%,
+  40% {
+    width: 4.8em;
   }
-  
-  .pers-role1,
-  .pers-role2 {
-	overflow: hidden;
-	white-space: nowrap;
-	display: inline-block;
-	position: relative;
-	animation-duration: 20s;
-	animation-timing-function: steps(25, end);
-	animation-iteration-count: infinite;
-  }
-  
-  .pers-role1::after,
-  .pers-role2::after {
-	content: "|";
-	position: absolute;
-	right: 0;
-	animation: caret infinite;
-	animation-duration: 1s;
-	animation-timing-function: steps(1, end);
-  }
-  
-  @keyframes pers-role1 {
-	0%,
-	50%,
-	100% {
-	  width: 0;
-	}
-	10%,
-	40% {
-	  width: 4.8em;
-	}
-  }
-  
-  @keyframes pers-role2 {
-	0%,
-	50%,
-	100% {
-	  width: 0;
-	}
-  
-	60%,
-	90% {
-	  width: 3.6em;
-	}
+}
+
+@keyframes pers-role2 {
+  0%,
+  50%,
+  100% {
+    width: 0;
   }
 
-@keyframes caret {
-	0%,
-	100% {
-	  opacity: 0;
-	}
-	50% {
-	  opacity: 1;
-	}
+  60%,
+  90% {
+    width: 3.6em;
   }
+}
+
+@keyframes caret {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
 
 /* LINKS */
 
@@ -639,13 +639,13 @@ a:hover {
 }
 a:active {
   color: #ffbc42;
-} 
- a:visited {
-	color: #fff;
+}
+a:visited {
+  color: #fff;
 }
 
 a:visited:hover {
-	color: #4b54f7;
+  color: #4b54f7;
 }
 
 /* NAVIGATION */
@@ -801,8 +801,12 @@ main li {
 }
 
 @keyframes morph {
-  0% {border-radius: 40% 60% 60% 40% / 60% 30% 70% 40%;} 
-  100% {border-radius: 40% 60%;} 
+  0% {
+    border-radius: 40% 60% 60% 40% / 60% 30% 70% 40%;
+  }
+  100% {
+    border-radius: 40% 60%;
+  }
 }
 
 @keyframes spin {
@@ -830,18 +834,18 @@ main li {
 }
 
 .about-image {
-	width: 100%;
-	height: 250px;
-	object-fit: cover;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
 }
 
 .about-bd {
-	width: 100%;
-	position: relative;
+  width: 100%;
+  position: relative;
 }
 
 .about-bd::after {
-	content: '';
+  content: "";
   display: block;
   position: absolute;
   top: 10px;
@@ -879,20 +883,34 @@ hr::before {
 /* FOOTER */
 
 footer p {
-	text-align: center;
-	padding-top: 1.5%;
-	font-weight: bold;
+  text-align: center;
+  padding-top: 1.5%;
+  font-weight: bold;
 }
 .social {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-size: 2em;
-	padding-top: 3%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  padding-top: 3%;
 }
 
 .social a {
-	margin: 1%;
+  margin: 1%;
+}
+
+/* ORDERED LIST */
+
+.contact-info {
+  text-align: center;
+  margin:auto;
+}
+
+ol {
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+  list-style-position: inside;
+  padding-left:0;
 }
 
 /* RESPONSIVE */
